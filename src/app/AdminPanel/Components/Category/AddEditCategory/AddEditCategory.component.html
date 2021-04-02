@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>الصنف</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite color?</p> -->
+  
+    <input hidden='hidden' matInput [(ngModel)]="dataModel.CategoryId">
+  
+  <mat-form-field>
+    <input matInput [(ngModel)]="dataModel.CategoryName">
+  </mat-form-field>
+  
+  
+   <div class="col-md-6 offset-1">
+                                                   
+    <label class=" form-control-label">تغيير الصورة</label>
+    <div class="form-group position-relative">
+            <div id="imagePreview">
+                <img [src]="dataModel.CategoryImage" alt="صورة " style="height:100%;"></div>
+
+            <input id="file-field" name="file-field" (change)="uploadImage($event)" type="file" >
+
+    </div>
+</div>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>

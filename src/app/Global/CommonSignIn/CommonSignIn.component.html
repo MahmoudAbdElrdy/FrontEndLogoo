@@ -1,0 +1,19 @@
+<form>
+  <div class="mb-4">
+    <mat-form-field class="w-100">
+      <input matInput name="UserName" [(ngModel)]="dataModel.UserName" type="text" placeholder="اسم امستخدم" required>
+    </mat-form-field>
+  </div>
+  <div class="mb-4">
+    <mat-form-field class="w-100">
+      
+      <input matInput name="Password" [(ngModel)]="dataModel.Password" type="password" placeholder="كلمة السر" required>
+    </mat-form-field>
+  </div> 
+  <!-- <div class="mb-3">
+    <mat-checkbox>Remember Me</mat-checkbox>
+    <span fxFlex></span> <a [routerLink]="['/session/forgot-password']">Forgot Password?</a>
+  </div> -->
+  <button color="accent" class="button-lg mb-3" (click) ="Login()" mat-raised-button>تسجيل الدخول</button>
+  <!-- <p>Don't have an account? <a [routerLink]="['/session/signup']">Click here to create one</a></p> -->
+</form>

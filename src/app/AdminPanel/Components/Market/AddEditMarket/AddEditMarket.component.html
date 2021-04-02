@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>المحل</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite color?</p> -->
+  
+    <input hidden='hidden' matInput [(ngModel)]="dataModel.MarketId">
+  
+  <mat-form-field>
+    <label>المحل</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketName">
+  </mat-form-field>
+  <div class="col-md-6 offset-1">
+                                                   
+   
+    <div class="form-group position-relative">
+            <div id="imagePreview">
+                <img [src]="dataModel.MarketLogo" alt="صورة " style="height:100%;"></div>
+
+            <input id="file-field" name="file-field" (change)="uploadImage($event)" type="file" >
+
+    </div>
+</div>
+
+  <label>المدينة</label>
+  <br>
+    <select  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.CityId" (ngModelChange)="onSelectCity($event)">
+     
+      <option *ngFor="let City of ListCity" [value]="City.CityId">{{City.CityName}}</option>
+   </select >
+  
+   <mat-form-field>
+    <label>العنوان</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketAddress">
+  </mat-form-field>
+  <mat-form-field>
+    <label>الجوال</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketPhone">
+  </mat-form-field>
+  <mat-form-field>
+    <label>الميل</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketEmail">
+  </mat-form-field>
+  <mat-form-field>
+    <label>الرقم السري</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketPassword">
+  </mat-form-field>
+  <mat-form-field>
+    <label>الوصف</label>
+    <br>
+    <input matInput [(ngModel)]="dataModel.MarketInfo">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>

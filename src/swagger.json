@@ -1,0 +1,3622 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "AspNetCoreApiStarter"
+  },
+  "paths": {
+    "/api/AboutUs/SaveAboutUs": {
+      "post": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsSaveAboutUsPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AboutUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AboutUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AboutUs/UpdateAboutUs": {
+      "put": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsUpdateAboutUsPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AboutUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AboutUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AboutUs/GetAllAboutUs": {
+      "get": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsGetAllAboutUsGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AboutUs/GetAboutUsById": {
+      "get": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsGetAboutUsByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AboutUs/GetAboutUs": {
+      "get": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsGetAboutUsGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AboutUs/RemoveAboutUs": {
+      "delete": {
+        "tags": [
+          "AboutUs"
+        ],
+        "operationId": "ApiAboutUsRemoveAboutUsDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AboutUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AboutUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/SaveAdminUsers": {
+      "post": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersSaveAdminUsersPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdminUsersVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdminUsersVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Upload/UploadAdminUsersLog": {
+      "post": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiUploadUploadAdminUsersLogPost",
+        "consumes": [],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/AdminUsersLogin": {
+      "post": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersAdminUsersLoginPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdminUsers",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdminUsersVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/UpdateAdminUsers": {
+      "put": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersUpdateAdminUsersPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdminUsersVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdminUsersVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/GetAllAdminUsers": {
+      "get": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersGetAllAdminUsersGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/GetAdminUsersById": {
+      "get": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersGetAdminUsersByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdminUsers/RemoveAdminUsers": {
+      "delete": {
+        "tags": [
+          "AdminUsers"
+        ],
+        "operationId": "ApiAdminUsersRemoveAdminUsersDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdminUsersVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdminUsersVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/SaveAdvertisement": {
+      "post": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementSaveAdvertisementPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/UpdateAdvertisement": {
+      "put": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementUpdateAdvertisementPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/GetAllAdvertisement": {
+      "get": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementGetAllAdvertisementGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/GetAdvertisementById": {
+      "get": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementGetAdvertisementByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/GetAdvertisementByMarketId": {
+      "get": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementGetAdvertisementByMarketIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "marketId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/GetAdvertisementByCityId": {
+      "get": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementGetAdvertisementByCityIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "cityId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/GetAdvertisementByCategory": {
+      "get": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementGetAdvertisementByCategoryGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "cityId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Advertisement/RemoveAdvertisement": {
+      "delete": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiAdvertisementRemoveAdvertisementDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Upload/UploadAdvertisement": {
+      "post": {
+        "tags": [
+          "Advertisement"
+        ],
+        "operationId": "ApiUploadUploadAdvertisementPost",
+        "consumes": [],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/AdvertisementOpen/SaveAdvertisementOpen": {
+      "post": {
+        "tags": [
+          "AdvertisementOpen"
+        ],
+        "operationId": "ApiAdvertisementOpenSaveAdvertisementOpenPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementOpenVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementOpenVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementOpen/UpdateAdvertisementOpen": {
+      "put": {
+        "tags": [
+          "AdvertisementOpen"
+        ],
+        "operationId": "ApiAdvertisementOpenUpdateAdvertisementOpenPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementOpenVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementOpenVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementOpen/GetAllAdvertisementOpen": {
+      "get": {
+        "tags": [
+          "AdvertisementOpen"
+        ],
+        "operationId": "ApiAdvertisementOpenGetAllAdvertisementOpenGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementOpen/GetAdvertisementOpenById": {
+      "get": {
+        "tags": [
+          "AdvertisementOpen"
+        ],
+        "operationId": "ApiAdvertisementOpenGetAdvertisementOpenByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementOpen/RemoveAdvertisementOpen": {
+      "delete": {
+        "tags": [
+          "AdvertisementOpen"
+        ],
+        "operationId": "ApiAdvertisementOpenRemoveAdvertisementOpenDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementOpenVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementOpenVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementUpdate/SaveAdvertisementUpdate": {
+      "post": {
+        "tags": [
+          "AdvertisementUpdate"
+        ],
+        "operationId": "ApiAdvertisementUpdateSaveAdvertisementUpdatePost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementUpdateVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementUpdateVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementUpdate/UpdateAdvertisementUpdate": {
+      "put": {
+        "tags": [
+          "AdvertisementUpdate"
+        ],
+        "operationId": "ApiAdvertisementUpdateUpdateAdvertisementUpdatePut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementUpdateVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementUpdateVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementUpdate/GetAllAdvertisementUpdate": {
+      "get": {
+        "tags": [
+          "AdvertisementUpdate"
+        ],
+        "operationId": "ApiAdvertisementUpdateGetAllAdvertisementUpdateGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementUpdate/GetAdvertisementUpdateById": {
+      "get": {
+        "tags": [
+          "AdvertisementUpdate"
+        ],
+        "operationId": "ApiAdvertisementUpdateGetAdvertisementUpdateByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementUpdate/RemoveAdvertisementUpdate": {
+      "delete": {
+        "tags": [
+          "AdvertisementUpdate"
+        ],
+        "operationId": "ApiAdvertisementUpdateRemoveAdvertisementUpdateDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementUpdateVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementUpdateVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementView/SaveAdvertisementView": {
+      "post": {
+        "tags": [
+          "AdvertisementView"
+        ],
+        "operationId": "ApiAdvertisementViewSaveAdvertisementViewPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementViewVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementViewVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementView/UpdateAdvertisementView": {
+      "put": {
+        "tags": [
+          "AdvertisementView"
+        ],
+        "operationId": "ApiAdvertisementViewUpdateAdvertisementViewPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementViewVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementViewVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementView/GetAllAdvertisementView": {
+      "get": {
+        "tags": [
+          "AdvertisementView"
+        ],
+        "operationId": "ApiAdvertisementViewGetAllAdvertisementViewGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementView/GetAdvertisementViewById": {
+      "get": {
+        "tags": [
+          "AdvertisementView"
+        ],
+        "operationId": "ApiAdvertisementViewGetAdvertisementViewByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/AdvertisementView/RemoveAdvertisementView": {
+      "delete": {
+        "tags": [
+          "AdvertisementView"
+        ],
+        "operationId": "ApiAdvertisementViewRemoveAdvertisementViewDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AdvertisementViewVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AdvertisementViewVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/SaveCategory": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategorySaveCategoryPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CategoryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CategoryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/UpdateCategory": {
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategoryUpdateCategoryPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CategoryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CategoryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetAllCategory": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategoryGetAllCategoryGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetCategorysAds": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategoryGetCategorysAdsGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/GetCategoryById": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategoryGetCategoryByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Category/RemoveCategory": {
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "operationId": "ApiCategoryRemoveCategoryDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CategoryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CategoryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/SaveCity": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCitySaveCityPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CityVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CityVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/UpdateCity": {
+      "put": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCityUpdateCityPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CityVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CityVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/GetAllCity": {
+      "get": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCityGetAllCityGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/GetSaudiCity": {
+      "get": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCityGetSaudiCityGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/GetCityById": {
+      "get": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCityGetCityByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/City/RemoveCity": {
+      "delete": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCityRemoveCityDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CityVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CityVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUs/SaveContactUs": {
+      "post": {
+        "tags": [
+          "ContactUs"
+        ],
+        "operationId": "ApiContactUsSaveContactUsPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUs/UpdateContactUs": {
+      "put": {
+        "tags": [
+          "ContactUs"
+        ],
+        "operationId": "ApiContactUsUpdateContactUsPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUs/GetAllContactUs": {
+      "get": {
+        "tags": [
+          "ContactUs"
+        ],
+        "operationId": "ApiContactUsGetAllContactUsGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUs/GetContactUsById": {
+      "get": {
+        "tags": [
+          "ContactUs"
+        ],
+        "operationId": "ApiContactUsGetContactUsByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUs/RemoveContactUs": {
+      "delete": {
+        "tags": [
+          "ContactUs"
+        ],
+        "operationId": "ApiContactUsRemoveContactUsDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUsMarket/SaveContactUsMarket": {
+      "post": {
+        "tags": [
+          "ContactUsMarket"
+        ],
+        "operationId": "ApiContactUsMarketSaveContactUsMarketPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsMarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsMarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUsMarket/UpdateContactUsMarket": {
+      "put": {
+        "tags": [
+          "ContactUsMarket"
+        ],
+        "operationId": "ApiContactUsMarketUpdateContactUsMarketPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsMarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsMarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUsMarket/GetAllContactUsMarket": {
+      "get": {
+        "tags": [
+          "ContactUsMarket"
+        ],
+        "operationId": "ApiContactUsMarketGetAllContactUsMarketGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUsMarket/GetContactUsMarketById": {
+      "get": {
+        "tags": [
+          "ContactUsMarket"
+        ],
+        "operationId": "ApiContactUsMarketGetContactUsMarketByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/ContactUsMarket/RemoveContactUsMarket": {
+      "delete": {
+        "tags": [
+          "ContactUsMarket"
+        ],
+        "operationId": "ApiContactUsMarketRemoveContactUsMarketDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "ContactUsMarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ContactUsMarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/SaveCountry": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "ApiCountrySaveCountryPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CountryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CountryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/UpdateCountry": {
+      "put": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "ApiCountryUpdateCountryPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CountryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CountryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/GetAllCountry": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "ApiCountryGetAllCountryGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/GetCountryById": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "ApiCountryGetCountryByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/RemoveCountry": {
+      "delete": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "ApiCountryRemoveCountryDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CountryVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CountryVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/SaveCustomer": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerSaveCustomerPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/SubscribeCustomer": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerSubscribeCustomerPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Customer",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerSubscribeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/RefreshCustomerToken": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerRefreshCustomerTokenPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Customer",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerTokenDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/UpdateCustomer": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerUpdateCustomerPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetAllCustomer": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerGetAllCustomerGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetCustomerById": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerGetCustomerByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/RemoveCustomer": {
+      "delete": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "ApiCustomerRemoveCustomerDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/SaveCustomerLogin": {
+      "post": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginSaveCustomerLoginPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerLoginVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerLoginVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/UpdateCustomerLogin": {
+      "put": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginUpdateCustomerLoginPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerLoginVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerLoginVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/GetAllCustomerLogin": {
+      "get": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginGetAllCustomerLoginGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/GetCustomerLoginById": {
+      "get": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginGetCustomerLoginByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/NewCustomerLogin": {
+      "get": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginNewCustomerLoginGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerLogin/RemoveCustomerLogin": {
+      "delete": {
+        "tags": [
+          "CustomerLogin"
+        ],
+        "operationId": "ApiCustomerLoginRemoveCustomerLoginDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "CustomerLoginVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CustomerLoginVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/SaveMarket": {
+      "post": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketSaveMarketPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Upload/UploadMarketLog": {
+      "post": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiUploadUploadMarketLogPost",
+        "consumes": [],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Market/MarketLogin": {
+      "post": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketMarketLoginPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Market",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketLoginDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/UpdateMarketToken": {
+      "post": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketUpdateMarketTokenPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Market",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketTokenDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/UpdateMarket": {
+      "put": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketUpdateMarketPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/GetAllMarket": {
+      "get": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketGetAllMarketGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/GetMarketById": {
+      "get": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketGetMarketByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Market/RemoveMarket": {
+      "delete": {
+        "tags": [
+          "Market"
+        ],
+        "operationId": "ApiMarketRemoveMarketDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketFollow/SaveMarketFollow": {
+      "post": {
+        "tags": [
+          "MarketFollow"
+        ],
+        "operationId": "ApiMarketFollowSaveMarketFollowPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketFollowVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketFollowVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketFollow/UpdateMarketFollow": {
+      "put": {
+        "tags": [
+          "MarketFollow"
+        ],
+        "operationId": "ApiMarketFollowUpdateMarketFollowPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketFollowVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketFollowVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketFollow/GetAllMarketFollow": {
+      "get": {
+        "tags": [
+          "MarketFollow"
+        ],
+        "operationId": "ApiMarketFollowGetAllMarketFollowGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketFollow/GetMarketFollowById": {
+      "get": {
+        "tags": [
+          "MarketFollow"
+        ],
+        "operationId": "ApiMarketFollowGetMarketFollowByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/MarketFollow/RemoveMarketFollow": {
+      "delete": {
+        "tags": [
+          "MarketFollow"
+        ],
+        "operationId": "ApiMarketFollowRemoveMarketFollowDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "MarketFollowVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MarketFollowVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Privacy/SavePrivacy": {
+      "post": {
+        "tags": [
+          "Privacy"
+        ],
+        "operationId": "ApiPrivacySavePrivacyPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "PrivacyVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PrivacyVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Privacy/UpdatePrivacy": {
+      "put": {
+        "tags": [
+          "Privacy"
+        ],
+        "operationId": "ApiPrivacyUpdatePrivacyPut",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "PrivacyVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PrivacyVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Privacy/GetAllPrivacy": {
+      "get": {
+        "tags": [
+          "Privacy"
+        ],
+        "operationId": "ApiPrivacyGetAllPrivacyGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Privacy/GetPrivacyById": {
+      "get": {
+        "tags": [
+          "Privacy"
+        ],
+        "operationId": "ApiPrivacyGetPrivacyByIdGet",
+        "consumes": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/api/Privacy/RemovePrivacy": {
+      "delete": {
+        "tags": [
+          "Privacy"
+        ],
+        "operationId": "ApiPrivacyRemovePrivacyDelete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "PrivacyVM",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PrivacyVM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/IResponseDTO"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AboutUsVM": {
+      "type": "object",
+      "properties": {
+        "AboutUsId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Info": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "IResponseDTO": {
+      "type": "object",
+      "properties": {
+        "IsPassed": {
+          "type": "boolean"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "Data": {
+          "type": "object"
+        }
+      }
+    },
+    "AdminUsersVM": {
+      "type": "object",
+      "properties": {
+        "UserId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "UserName": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AdvertisementVM": {
+      "type": "object",
+      "properties": {
+        "AdsId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "MarketId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CityId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CategoryId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "AdsType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AdsText": {
+          "type": "string"
+        },
+        "AdsImage": {
+          "type": "string"
+        },
+        "AdsVideo": {
+          "type": "string"
+        },
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        },
+        "Special": {
+          "type": "boolean"
+        },
+        "WaitingUpdate": {
+          "type": "boolean"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "AdvertisementOpenVM": {
+      "type": "object",
+      "properties": {
+        "AdsopenId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AdsId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      }
+    },
+    "AdvertisementUpdateVM": {
+      "type": "object",
+      "properties": {
+        "AdsUpdateId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CityId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "AdsType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AdsText": {
+          "type": "string"
+        },
+        "AdsImage": {
+          "type": "string"
+        },
+        "AdsVideo": {
+          "type": "string"
+        },
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        },
+        "Special": {
+          "type": "boolean"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AdsId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      }
+    },
+    "AdvertisementViewVM": {
+      "type": "object",
+      "properties": {
+        "AdsViewId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AdsId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      }
+    },
+    "CategoryVM": {
+      "type": "object",
+      "properties": {
+        "CategoryId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CategoryImage": {
+          "type": "string"
+        },
+        "CategoryName": {
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Order": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "CityVM": {
+      "type": "object",
+      "properties": {
+        "CityId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CityName": {
+          "type": "string"
+        },
+        "CountryId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Order": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ContactUsVM": {
+      "type": "object",
+      "properties": {
+        "ContactUsId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Solved": {
+          "type": "boolean"
+        },
+        "Plateform": {
+          "type": "boolean"
+        },
+        "Phone": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "ContactUsMarketVM": {
+      "type": "object",
+      "properties": {
+        "ContactUsId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Solved": {
+          "type": "boolean"
+        },
+        "Plateform": {
+          "type": "boolean"
+        },
+        "Phone": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "MarketId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "CountryVM": {
+      "type": "object",
+      "properties": {
+        "CountryName": {
+          "type": "string"
+        },
+        "CountryId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Order": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CustomerVM": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Plateform": {
+          "type": "boolean"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "CityId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "CustomerSubscribeDTO": {
+      "type": "object",
+      "properties": {
+        "Plateform": {
+          "type": "boolean"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "Cityid": {
+          "format": "uuid",
+          "type": "string"
+        }
+      }
+    },
+    "CustomerTokenDTO": {
+      "type": "object",
+      "properties": {
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "CustomerLoginVM": {
+      "type": "object",
+      "properties": {
+        "LoginId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "LoginDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "MarketVM": {
+      "type": "object",
+      "properties": {
+        "MarketId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "MarketName": {
+          "type": "string"
+        },
+        "MarketLogo": {
+          "type": "string"
+        },
+        "MarketAddress": {
+          "type": "string"
+        },
+        "MarketPhone": {
+          "type": "string"
+        },
+        "MarketEmail": {
+          "type": "string"
+        },
+        "MarketPassword": {
+          "type": "string"
+        },
+        "MarketInfo": {
+          "type": "string"
+        },
+        "Plateform": {
+          "type": "boolean"
+        },
+        "CityId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "MarketLatlng": {
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "MarketLoginDTO": {
+      "type": "object",
+      "properties": {
+        "MarketEmail": {
+          "type": "string"
+        },
+        "MarketPassword": {
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "MarketTokenDTO": {
+      "type": "object",
+      "properties": {
+        "MarketId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Token": {
+          "type": "string"
+        }
+      }
+    },
+    "MarketFollowVM": {
+      "type": "object",
+      "properties": {
+        "MarketCustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "MarketId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "CustomerId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Follow": {
+          "type": "boolean"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "PrivacyVM": {
+      "type": "object",
+      "properties": {
+        "PrivacyId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Content": {
+          "type": "string"
+        },
+        "CreationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Available": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": []
+}

@@ -1,0 +1,56 @@
+<button mat-button (click)="openDialog({})" mat-flat-button color="primary">{{'Add'|translate}}</button>
+<ng-container *ngIf="List && List.length >= 0; else elseBlock">
+  <ng-container >
+     <div fxLayout="row wrap">
+        <div fxFlex.gt-md="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+           <div class="product-list">
+              <mat-card class="pt-0">
+                 <div class="overflow-hidden">
+                    <div class="table-responsive-x product-list-table">         
+                       <table class="w-100 table-scroll-wrap" mat-table [dataSource]="List" matSort>
+                          <ng-container hidden matColumnDef="UserId">
+                             <th hidden class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>UserId</th>
+                             <td hidden class="text-nowrap px-3" mat-cell *matCellDef="let element">{{element.UserId}}</td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="UserName">
+                             <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>اسم المستخدم</th>
+                             <td class="text-nowrap product-CountryName" mat-cell *matCellDef="let element"><span>{{element.UserName}}</span></td>
+                          </ng-container>
+                          <ng-container matColumnDef="Password">
+                           <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>كلمة السر</th>
+                           <td class="text-nowrap product-CountryName" mat-cell *matCellDef="let element"><span>{{element.Password}}</span></td>
+                        </ng-container>
+                         
+                          <ng-container matColumnDef="action">
+                             <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> {{'Action'|translate}} </th>
+                             <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
+                                <button mat-icon-button (click) ="onEdit(element)" color="primary">
+                                   <i class="material-icons">edit</i>
+                                </button> 
+                                <button color="warn" mat-icon-button (click)="delete(element)">
+                                   <mat-icon class="">delete</mat-icon>
+                                </button>
+                                <mat-checkbox [(ngModel)] = "element.Available" (click) ="onavaliable(element)" style="margin-right: 1.5rem;">
+                                 <label  *ngIf="element.Available==true" >متاح</label> 
+                                 </mat-checkbox>
+                             </td>
+                          </ng-container>     
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                       </table>  
+                    </div>
+                 </div>   
+                 <!-- product-list-tabel-->
+                 <mat-paginator [pageSizeOptions]="[15, 30, 45, 60]"></mat-paginator>
+              </mat-card>
+           </div>
+           <!-- product-list-->
+        </div> 
+     </div>
+  </ng-container>
+  
+</ng-container>
+<ng-template #elseBlock>
+  <h5 class="ml-5">لايوجد</h5>
+</ng-template>

@@ -1,0 +1,12 @@
+<!-- <h1 mat-dialog-title>
+    {{'Delete'|translate}}
+  </h1> -->
+  
+  <div mat-dialog-content>
+    <p>{{'DeleteMessage'|translate}}</p>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-button (click)="onDismiss()">{{'Close'|translate}}</button>
+    <button mat-raised-button color="primary" (click)="onConfirm()">{{'YES'|translate}}</button>
+  </div>

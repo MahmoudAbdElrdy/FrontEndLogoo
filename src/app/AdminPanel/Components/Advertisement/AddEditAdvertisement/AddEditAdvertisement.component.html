@@ -1,0 +1,83 @@
+
+<h1 mat-dialog-title>الصنف</h1>
+<br>
+<label>النوع</label>
+<br>
+<select  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.AdsType" (ngModelChange)="onSelectType($event)">
+     
+  <option *ngFor="let Type of ListType" [value]="Type.id">{{Type.text}}</option>
+</select >
+<br>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite color?</p> -->
+  <label [hidden]="!(dataModel.AdsType==1||dataModel.AdsType==4)">النص</label>
+  <br>
+    <input hidden='hidden' matInput [(ngModel)]="dataModel.AdsId">
+   
+  <mat-form-field>
+ 
+    <input [hidden]="!(dataModel.AdsType==1||dataModel.AdsType==4)" matInput [(ngModel)]="dataModel.AdsText">
+  </mat-form-field>
+ 
+  
+   <div class="col-md-6 offset-1">
+                                                   
+  
+    <div  [hidden]="!(dataModel.AdsType==2||dataModel.AdsType==4)" class="form-group position-relative">
+            <div id="imagePreview">
+                <img [hidden]="!(dataModel.AdsType==2||dataModel.AdsType==4)" [src]="dataModel.AdsImage" alt="صورة " style="height:100%;">
+              </div>
+
+            <input [hidden]="!(dataModel.AdsType==2||dataModel.AdsType==4)" id="file-field" name="file-field" (change)="uploadImage($event)" type="file" >
+
+    </div>
+    
+</div>
+<div class="col-md-6 offset-1">
+                                                   
+  
+  <div class="form-group position-relative">
+    <div [hidden]="!(dataModel.AdsType==3||dataModel.AdsType==4)" id="imagePreview">
+            <video  [hidden]="!(dataModel.AdsType==3||dataModel.AdsType==4)" controls   (click)="toggleVideo()" #videoPlayer>
+              <source [src]="dataModel.AdsVideo"  />
+              Browser not supported
+          </video>
+          
+    </div>
+          <input  [hidden]="!(dataModel.AdsType==3||dataModel.AdsType==4)" id="file-field" name="file-field" (change)="uploadVideo($event)" type="file" >
+
+  </div>
+  
+</div>
+<div>
+  <label>المدينة</label>
+  <br>
+  <select  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.CityId" (ngModelChange)="onSelectCity($event)">
+     
+    <option *ngFor="let Type of ListCity" [value]="Type.CityId">{{Type.CityName}}</option>
+  </select >
+</div>
+<div>
+  <label [hidden]="!(dataModel.flag!=0)">الصنف</label>
+  <br>
+  <select  style="width: 12.4rem; height: 2.1rem;"  [hidden]="!(dataModel.flag!=0)" class="from-control" [(ngModel)]="dataModel.CategoryId" (ngModelChange)="onSelectCategroy($event)">
+     
+    <option *ngFor="let Type of ListCategroy" [value]="Type.CategoryId">{{Type.CategoryName}}</option>
+  </select >
+</div>
+<div>
+  <label [hidden]="!(dataModel.flag!=0)">الاعلان</label>
+<br>
+  <select [hidden]="!(dataModel.flag!=0)"  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.MarketId" (ngModelChange)="onSelectMarket($event)">
+     
+    <option *ngFor="let Type of ListMarket" [value]="Type.MarketId">{{Type.MarketName}}</option>
+  </select >
+</div>
+
+</div>
+<div mat-dialog-actions>
+  <button [hidden]="(dataModel.flag==0)" mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button [hidden]="(dataModel.flag==0)" mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+  <button [hidden]="!(dataModel.flag==0)" mat-button (click)="CloseUpdate()">رفض</button>
+  <button [hidden]="!(dataModel.flag==0)" mat-button (click)="SaveUpdate()" cdkFocusInitial>موافق</button>
+</div>

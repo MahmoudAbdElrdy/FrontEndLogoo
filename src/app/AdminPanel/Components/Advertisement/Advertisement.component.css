@@ -1,0 +1,43 @@
+table{
+    width:100%;
+  }
+  .mat-header-row {
+    background-color: #3F51B5;
+    color: white;
+    font-weight: bold;
+  }
+  .mat-sort-header-button{
+    margin-right: 2rem !important;
+  }
+  
+  [hidden] {
+    display: none !important;
+  }
+  .mat-header-cell {
+    color: white;
+    font-weight: bold;
+    border-right: solid 0.5px white;
+    margin-right: 1rem;;
+  }
+   
+  .mat-row:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .mat-row:nth-child(even) {
+    background-color: #D3D3D3;
+  }
+  .mat-cell{
+    border-right: solid 0.5px black;
+    text-align: center;
+  }
+  .mat-header-row{
+    text-align: center  !important;
+  }
+  .mat-header-cell {
+    text-align: center  !important;
+   }
+   .centre {
+    text-align: center !important;
+    position: relative;
+  }

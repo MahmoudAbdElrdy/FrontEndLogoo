@@ -1,0 +1,16 @@
+export { AboutUsService } from './services/about-us.service';
+export { AdminUsersService } from './services/admin-users.service';
+export { AdvertisementService } from './services/advertisement.service';
+export { AdvertisementOpenService } from './services/advertisement-open.service';
+export { AdvertisementUpdateService } from './services/advertisement-update.service';
+export { AdvertisementViewService } from './services/advertisement-view.service';
+export { CategoryService } from './services/category.service';
+export { CityService } from './services/city.service';
+export { ContactUsService } from './services/contact-us.service';
+export { ContactUsMarketService } from './services/contact-us-market.service';
+export { CountryService } from './services/country.service';
+export { CustomerService } from './services/customer.service';
+export { CustomerLoginService } from './services/customer-login.service';
+export { MarketService } from './services/market.service';
+export { MarketFollowService } from './services/market-follow.service';
+export { PrivacyService } from './services/privacy.service';

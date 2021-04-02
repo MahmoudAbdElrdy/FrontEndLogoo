@@ -1,0 +1,19 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite color?</p> -->
+  
+    <input hidden='hidden' matInput [(ngModel)]="dataModel.UserId">
+  <label>اسم المستخدم</label>
+  <mat-form-field>
+    <input matInput [(ngModel)]="dataModel.UserName">
+  </mat-form-field>
+<br>
+  <label>كلمة السر </label>
+  <mat-form-field>
+    <input type="password" matInput [(ngModel)]="dataModel.Password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>

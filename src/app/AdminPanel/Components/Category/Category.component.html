@@ -1,0 +1,43 @@
+
+<button mat-button (click)="openDialog({})" mat-flat-button color="primary">{{'Add'|translate}}</button>
+
+ 
+   <ng-container *ngIf="List && List.length >= 0; else elseBlock">
+      <ng-container *ngIf="showType == 'list';else gridtype">
+        
+      </ng-container>
+      <ng-template #gridtype>
+         <div fxLayout="row wrap" fxLayoutAlign="start stretch" *ngIf="List && List.length>0">
+            <div fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let product of List; let i=index;">
+               <mat-card class="product-card">
+                  <a class="p-link">
+                     <img width="626" height="800" mat-card-image [src] ="product?.CategoryImage" alt="Photo of a Shiba Inu">
+                  </a>
+                  <div class="wishlist-icon">
+                     <a (click)="delete(product)"><mat-icon> delete </mat-icon></a>
+                  </div>
+                  <!-- wishlist-icon-->
+                  <mat-card-content class="product-content relative">
+                     <h5><a class="title-link">{{product?.CategoryName}}</a> </h5>
+                     <!-- <p class="category-wrap mb-2">{{product?.category}}</p>
+                     <div class="product-price">
+                        <div fxFlex fxLayoutAlign="space-between">
+                           <h6 class="accent-color">{{product?.price | currency}}</h6>
+                        </div>
+                     </div> -->
+                     <!--product-price-->
+                     <div class="m-icon">
+                        <button mat-fab (click)="onEdit(product)"><i class="material-icons">edit</i></button>
+                     </div>
+                     <!-- m-icon -->
+                  </mat-card-content>
+                  <!-- product-content -->
+               </mat-card>
+            </div>
+         </div>
+      </ng-template>
+   </ng-container>
+   <ng-template #elseBlock>
+      <h5 class="ml-5">No product found</h5>
+   </ng-template>
+   
