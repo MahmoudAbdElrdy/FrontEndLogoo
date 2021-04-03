@@ -79,8 +79,8 @@ import { AddEditCategoryComponent } from './AdminPanel/Components/Category/AddEd
 import { AddEditAdvertisementComponent } from './AdminPanel/Components/Advertisement/AddEditAdvertisement/AddEditAdvertisement.component';
 import { AddEditMarketComponent } from './AdminPanel/Components/Market/AddEditMarket/AddEditMarket.component';
 import { AddAdminUsersComponent } from './AdminPanel/Components/AdminUsers/AdminUsers/AddAdminUsers.component';
-
-
+import { AdvertisementdetailcityComponent } from './AdminPanel/Components/Advertisement/advertisementdetailcity/advertisementdetailcity.component';
+import { AdvertisementAddEditCityComponent } from './AdminPanel/Components/Advertisement/advertisementdetailcity/advertisement-add-edit-city/advertisement-add-edit-city.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -177,7 +177,8 @@ export function createTranslateLoader(http: HttpClient) {
       ToastaModule
    ],
      entryComponents: [AddAdminUsersComponent,
-        AddEditMarketComponent,AddCountryComponent,ConfirmDialogComponent,AddEditCityComponent,AddEditCategoryComponent,AddEditAdvertisementComponent],
+        AddEditMarketComponent,AddCountryComponent,ConfirmDialogComponent,
+        AddEditCityComponent,AddEditCategoryComponent,AddEditAdvertisementComponent,AdvertisementAddEditCityComponent],
 
    bootstrap: [AppComponent]
 })

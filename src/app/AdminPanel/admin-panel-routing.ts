@@ -8,6 +8,7 @@ import { CategoryComponent } from './Components/Category/Category.component';
 import { AdvertisementComponent } from './Components/Advertisement/Advertisement.component';
 import { MarketComponent } from './Components/Market/Market.component';
 import { AdminUsersComponent } from './Components/AdminUsers/AdminUsers.component';
+import { AdvertisementdetailComponent } from './Components/Advertisement/advertisementdetail/advertisementdetail.component';
 
 export const AdminPanelRoutes : Routes = [
    {
@@ -61,7 +62,10 @@ export const AdminPanelRoutes : Routes = [
                path:'Admin',
                component:AdminUsersComponent
             },
-
+            {
+               path:'Advertisementdetail',
+               component:AdvertisementdetailComponent
+            },
       ]
    }
 ]

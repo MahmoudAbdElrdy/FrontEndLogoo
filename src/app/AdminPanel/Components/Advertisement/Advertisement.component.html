@@ -89,6 +89,10 @@
                               <button style="margin-right: 1.5rem;" color="warn" mat-icon-button (click)="delete(element)">
                                 حذف
                               </button>
+                              <button mat-icon-button (click) ="btnClick(element.AdsId)" color="Green">
+                                
+                                 <span>تفاصيل</span>
+                              </button> 
                               <mat-checkbox [(ngModel)] = "element.Available" (click) ="onavaliable(element)" style="margin-right: 1.5rem;">
                               <label  *ngIf="element.Available==true" >متاح</label> 
                               </mat-checkbox>

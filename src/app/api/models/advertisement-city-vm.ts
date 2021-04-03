@@ -1,5 +1,5 @@
 /* tslint:disable */
-export interface AdvertisementCityVM  {
+export class AdvertisementCityVM  {
   AdsCityId?: string;
   AdsId?: string;
   Available?: boolean;

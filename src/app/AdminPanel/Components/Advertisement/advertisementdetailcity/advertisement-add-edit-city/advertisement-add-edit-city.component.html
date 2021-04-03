@@ -1,1 +1,18 @@
-<p>advertisement-add-edit-city works!</p>
+<h1 mat-dialog-title>المدن</h1>
+<div mat-dialog-content>
+
+  <div>
+    <label>المدينة</label>
+    <br>
+    <select  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.CityId">
+       
+      <option *ngFor="let Type of ListCity" [value]="Type?.CityId">{{Type.CityName}}</option>
+    </select >
+  </div>
+  
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>

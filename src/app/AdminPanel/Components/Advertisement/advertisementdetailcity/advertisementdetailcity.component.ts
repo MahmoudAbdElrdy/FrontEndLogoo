@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import { AdvertisementService, CityService } from 'src/app/api/services';
-import { AdvertisementAddEditCityComponent } from './advertisement-add-edit-city/advertisement-add-edit-city.component';
 import { CityVM } from 'src/app/api/models';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+import { AdvertisementAddEditCityComponent } from './advertisement-add-edit-city/advertisement-add-edit-city.component';
+import { AdvertisementCityVM } from 'src/app/api/models/advertisement-city-vm';
 @Component({
   selector: 'app-advertisementdetailcity',
   templateUrl: './advertisementdetailcity.component.html',
@@ -14,14 +15,19 @@ import { ConfirmDialogModel, ConfirmDialogComponent } from '../../confirm-dialog
 })
 export class AdvertisementdetailcityComponent {
   public data: CityVM;
+  public dataModel: AdvertisementCityVM
   List 		      : any;
+  id:any;
+  @Input()advertisementid:any;
 	popUpDeleteUserResponse : any;
-	displayedColumns : string [] = ['CityId','CityName','CountryName','action' ];
+  ApiAdvertisementGetAdvertisementDetailsGetParams: AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetParams;
+	displayedColumns : string [] = ['CityId','CityName','action' ];
   @ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
   
 	@ViewChild(MatSort,{static: false}) sort           : MatSort;
   close: any;
   dataSource = new MatTableDataSource<CityVM>();
+  ListCity: any;
 	constructor(public translate : TranslateService,
 					private router : Router, private AdvertisementService:AdvertisementService,
 					private Service : CityService, private dialog: MatDialog,private _snackBar: MatSnackBar) { }
@@ -29,21 +35,24 @@ export class AdvertisementdetailcityComponent {
   
   ngOnInit() {
    
-   this.GetAll();
-   
+  this.GetAllCity();
+   this.GetAllAdvertisementService();
 }
-  GetAll(){
+GetAllCity(){
     
-    this.Service.ApiCityGetAllCitySTPGet().subscribe((data: any) => {
-      
-      this.List=data.Data;
-    })
-  }
+  this.Service.ApiCityGetAllCityGet().subscribe((data: any) => {
+   
+    this.ListCity=data.Data;
+  })
+}
+ 
   GetAllAdvertisementService(){
     
-    this.Service.ApiCityGetAllCitySTPGet().subscribe((data: any) => {
-      
-      this.List=data.Data;
+    this.ApiAdvertisementGetAdvertisementDetailsGetParams={id:this.advertisementid,CustomerId:null};
+    this.AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetResponse(this.ApiAdvertisementGetAdvertisementDetailsGetParams).subscribe((data: any) => {
+      debugger
+      this.List=data.body.Data.AdvertisementCity;
+      console.log(this.List)
     })
   }
   onEdit(obj){
@@ -54,7 +63,7 @@ export class AdvertisementdetailcityComponent {
       disableClose:true
     }).afterClosed().subscribe(result => {
      
-      this.GetAll();
+      this.GetAllAdvertisementService();
     });
    // this.dialog.open(AddCityComponent,dialogConfig);
   }
@@ -87,15 +96,15 @@ export class AdvertisementdetailcityComponent {
       //this.result = dialogResult;
       debugger;
       if(dialogResult==false){
-        this.Service.ApiCityRemoveCityDelete(obj).subscribe( res=>{
+        this.AdvertisementService.ApiAdvertisementRemoveAdvertisementCityDeleteResponse(obj).subscribe( res=>{
     
-          if(res.IsPassed==true)
+          if(res.body.IsPassed==true)
           {
             this._snackBar.open("تم الحذف بنجاح","حذف" ,{
               duration: 2220,
               
             });
-            this.GetAll();
+            this.GetAllAdvertisementService();
           }
           else
           {
@@ -119,5 +128,6 @@ export class AdvertisementdetailcityComponent {
       duration: 2000,
     });
   }
+ 
 }
 

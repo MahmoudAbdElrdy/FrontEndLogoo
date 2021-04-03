@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-advertisementdetail',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./advertisementdetail.component.css']
 })
 export class AdvertisementdetailComponent implements OnInit {
-
-  constructor() { }
+  advertisementid:any;
+  NameWorkShop:any;
+  constructor( private router: Router,
+    
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+   
+    this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
+   
+
   }
 
+  
 }

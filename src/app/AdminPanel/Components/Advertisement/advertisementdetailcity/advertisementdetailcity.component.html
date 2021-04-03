@@ -10,24 +10,18 @@
                        <table class="w-100 table-scroll-wrap" mat-table [dataSource]="List" matSort>
                           <ng-container hidden matColumnDef="CityId">
                              <th hidden class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>CityId</th>
-                             <td hidden class="text-nowrap px-3" mat-cell *matCellDef="let element">{{element.CityId}}</td>
+                             <td hidden class="text-nowrap px-3" mat-cell *matCellDef="let element">{{element.City.CityId}}</td>
                           </ng-container>
                           
                           <ng-container matColumnDef="CityName">
                              <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>{{'City'|translate}}</th>
-                             <td class="text-nowrap product-CityName" mat-cell *matCellDef="let element"><span>{{element.CityName}}</span></td>
+                             <td class="text-nowrap product-CityName" mat-cell *matCellDef="let element"><span>{{element.City.CityName}}</span></td>
                           </ng-container>
-                          <ng-container matColumnDef="CountryName">
-                           <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Country'|translate}}</th>
-                           <td class="text-nowrap product-CountryName" mat-cell *matCellDef="let element"><span>{{element.CountryName}}</span></td>
-                        </ng-container>
-                         
+                     
                           <ng-container matColumnDef="action">
                              <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> {{'Action'|translate}} </th>
                              <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
-                                <button mat-icon-button (click) ="onEdit(element)" color="primary">
-                                   <i class="material-icons">edit</i>
-                                </button> 
+                              
                                 <button color="warn" mat-icon-button (click)="delete(element)">
                                    <mat-icon class="">delete</mat-icon>
                                 </button>

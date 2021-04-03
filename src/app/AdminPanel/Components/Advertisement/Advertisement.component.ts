@@ -196,6 +196,11 @@ GetUpdateAdvertsment(obj)
      
     });
   }
+  btnClick(id){
+   
+    this.router.navigateByUrl('/admin-panel/Advertisementdetail?advertisementid='+id);
+ 
+  }
 }
 
 
