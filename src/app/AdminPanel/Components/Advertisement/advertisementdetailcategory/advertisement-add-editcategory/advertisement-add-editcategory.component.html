@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>الاصناف</h1>
+<div mat-dialog-content>
+
+  <div>
+    <label>الصنف</label>
+    <br>
+    <select  style="width: 12.4rem; height: 2.1rem;" class="from-control" [(ngModel)]="dataModel.CategoryId">
+       
+      <option *ngFor="let Type of ListCategory" [value]="Type?.CategoryId">{{Type.CategoryName}}</option>
+    </select >
+  </div>
+  
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>

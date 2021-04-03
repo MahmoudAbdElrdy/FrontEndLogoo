@@ -1,5 +1,5 @@
 /* tslint:disable */
-export interface AdvertisementCategoryVM  {
+export class AdvertisementCategoryVM  {
   AdsCategoryId?: string;
   AdsId?: string;
   Available?: boolean;
