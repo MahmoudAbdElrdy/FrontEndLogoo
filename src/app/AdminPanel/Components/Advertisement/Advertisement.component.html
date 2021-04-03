@@ -31,7 +31,7 @@
                            <td  mat-cell *matCellDef="let element" >{{element.AdsText}}
                            </td>
                        </ng-container>
-                         <ng-container matColumnDef="AdsImage">
+                         <!-- <ng-container matColumnDef="AdsImage">
                            <th  mat-header-cell *matHeaderCellDef>الصورة</th>
                            <td class="text-nowrap team-images-wrap py-3 px-3 centre" mat-cell *matCellDef="let element" >
                               <img class="img-circle inline-block" src="{{element.AdsImage}}" width="70" height="50">  
@@ -41,17 +41,14 @@
                            <th  mat-header-cell *matHeaderCellDef>الفيديو</th>
                            
                            <td  class="text-nowrap team-images-wrap py-3 px-3" mat-cell *matCellDef="let element" >
-                               <!-- <video [hidden]="element.AdsVideo==''" controls  width="80" height="60"  #videoPlayer>
-                                 <source src="{{element.AdsVideo}}"  />
-                                 Browser not supported
-                             </video> -->
+                             
                              <button  mat-icon-button (click)='openNewTab(element.AdsVideo)'  *ngIf="element.AdsVideo!=''"  color="primary">
                               اضغط هنا
                             </button> 
                                                    <label   (click)='openNewTab(element.AdsVideo)'  *ngIf="element.AdsVideo==''" > لا يوجد فيديو</label> 
 
                            </td>
-                        </ng-container> 
+                        </ng-container>  -->
                         <ng-container matColumnDef="StartDate">
                            <th  mat-header-cell *matHeaderCellDef mat-sort-header class="centre">تاريخ البداية</th>
                            <td mat-cell *matCellDef="let element" ><span>{{element?.StartDate| CustomDatePipe}}</span></td>

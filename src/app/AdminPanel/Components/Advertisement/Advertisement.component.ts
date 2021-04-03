@@ -19,7 +19,7 @@ export class AdvertisementComponent implements OnInit {
   List 		      : AdvertisementVM[];
   dataSource = new MatTableDataSource();
 	popUpDeleteUserResponse : any;//'CategoryName',
-	displayedColumns : string [] = ['AdsId','AdsType','MarketName','AdsText','AdsImage','AdsVideo','StartDate','EndDate','AdvertismenOpen','CustomerOpen','AdvertismenView','CustomerView','action' ];
+	displayedColumns : string [] = ['AdsId','AdsType','MarketName','AdsText','StartDate','EndDate','AdvertismenOpen','CustomerOpen','AdvertismenView','CustomerView','action' ];
 	//@ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
   @ViewChild(MatSort,{static: false}) sort           : MatSort;
   @ViewChild('videoPlayer',{static: false}) videoplayer: ElementRef;
