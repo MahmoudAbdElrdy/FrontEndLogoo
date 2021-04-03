@@ -27,22 +27,11 @@ export class CityComponent  {
 					private router : Router, 
 					private Service : CityService, private dialog: MatDialog,private _snackBar: MatSnackBar) { }
 
-  // ngOnInit() {
-  // this.GetAll();
-  // debugger;
-  // this.dataSource = new MatTableDataSource(this.List);
-  // setTimeout(() => this.dataSource.paginator = this.paginator);
-  // }
+  
   ngOnInit() {
    
    this.GetAll();
-    // this.Service.ApiCityGetAllCitySTPGet().subscribe((data: any) => {
-    //   debugger;
-    //   let resultData = data.Data;
-    //   this.dataSource = new MatTableDataSource(resultData);
-    //   this.dataSource.paginator = this.paginator;
-    //   this.List=data.Data;
-    // })
+   
 }
   GetAll(){
     
