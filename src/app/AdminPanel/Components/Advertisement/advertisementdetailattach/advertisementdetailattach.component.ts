@@ -12,20 +12,15 @@ import { AdvertisementAttachVM } from 'src/app/api/models/advertisement-attach-v
   templateUrl: './advertisementdetailattach.component.html',
   styleUrls: ['./advertisementdetailattach.component.css']
 })
-export class AdvertisementdetailattachComponent implements OnInit { public data: AdvertisementAttachVM;
+export class AdvertisementdetailattachComponent implements OnInit
+ { 
+   public data: AdvertisementAttachVM;
   public dataModel: AdvertisementAttachVM
   List 		      : any;
   id:any;
   @ViewChild('videoPlayer',{static: false}) videoplayer: ElementRef;
   @Input()advertisementid:any;
   @Input()Listadvertisementid:any;
-	popUpDeleteUserResponse : any;
-  ListType:any = [
-    {id: 1, text: 'نص'},
-    {id: 2, text: 'صورة'},
-    {id: 3, text: 'فيديو'},
-    {id: 4, text: 'الكل '},
-];
   ApiAdvertisementGetAdvertisementDetailsGetParams: AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetParams;
 	displayedColumns : string [] = ['AttachType','AttachUrl','action' ];
   @ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;

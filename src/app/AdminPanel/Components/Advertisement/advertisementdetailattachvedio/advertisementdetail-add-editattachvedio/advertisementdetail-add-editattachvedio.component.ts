@@ -5,18 +5,18 @@ import {AdvertisementVM} from 'src/app/api/models'
 import { ActivatedRoute } from '@angular/router';
 import { AdvertisementAttachVM } from 'src/app/api/models/advertisement-attach-vm';
 @Component({
-  selector: 'app-advertisement-add-editattach',
-  templateUrl: './advertisement-add-editattach.component.html',
-  styleUrls: ['./advertisement-add-editattach.component.css']
+  selector: 'app-advertisementdetail-add-editattachvedio',
+  templateUrl: './advertisementdetail-add-editattachvedio.component.html',
+  styleUrls: ['./advertisementdetail-add-editattachvedio.component.css']
 })
-export class AdvertisementAddEditattachComponent implements OnInit {
+export class AdvertisementdetailAddEditattachvedioComponent implements OnInit {
   @ViewChild('videoPlayer',{static: false}) videoplayer: ElementRef;
   public dataModel: AdvertisementService.ApiAdvertisementNewSaveAdvertisementAttachPostParams;
   AttachUrl: any;
   formData: FormData;
   AdsImage: string;
   fileToUpload: File;
-  constructor(public dialogRef: MatDialogRef<AdvertisementAddEditattachComponent>,private activatedRoute:ActivatedRoute,
+  constructor(public dialogRef: MatDialogRef<AdvertisementdetailAddEditattachvedioComponent>,private activatedRoute:ActivatedRoute,
     @Inject(MAT_DIALOG_DATA) public data: AdvertisementVM,	private categroy:CategoryService,private market:MarketService,
     private Service : AdvertisementService,private _snackBar: MatSnackBar,
     	private ServiceCity : CityService, private ServiceUpdate : AdvertisementUpdateService) {
@@ -75,7 +75,7 @@ this.DeleteUpdate();
   ADD(){
     debugger;
     let AdsId1=this.activatedRoute.snapshot.queryParams['advertisementid']
- this.dataModel={AdsId:AdsId1,AttachType:0,AdsAttachId:null,AttachUrl:this.AttachUrl,CreationDate:null,File:this.fileToUpload };
+ this.dataModel={AdsId:AdsId1,AttachType:1,AdsAttachId:null,AttachUrl:this.AttachUrl,CreationDate:null,File:this.fileToUpload };
    this.Service.ApiAdvertisementNewSaveAdvertisementAttachPost(this.dataModel).subscribe( res=>{
   
     if(res.IsPassed==true)
@@ -112,22 +112,7 @@ this.DeleteUpdate();
     reader.readAsDataURL(event.target.files[0]);
 
   }
-  uploadVideo(event) {
-    debugger;
-    let files = event.target.files;
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
   
-    this.Service.UploadVedio(formData).subscribe(event => {
-    debugger;
-       const result= event as any;
-
-    this.dataModel.AttachUrl=result.Data;
-   
-    });
-
-  }
 }
 
 

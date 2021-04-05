@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>الملف</h1>
+<div mat-dialog-content>
+
+  <div>
+    
+    <div class="form-group position-relative">
+        <div  id="imagePreview">
+                <video   controls   (click)="toggleVideo()" #videoPlayer>
+                  <source [src]="AdsImage"  />
+                  Browser not supported
+              </video>
+              
+        </div>
+              <input   id="file-field" name="file-field" (change)="uploadImage($event)" type="file" >
+    
+      </div>
+  </div>
+  
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>
