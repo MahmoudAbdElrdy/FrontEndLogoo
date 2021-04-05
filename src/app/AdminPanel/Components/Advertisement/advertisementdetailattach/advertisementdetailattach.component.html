@@ -16,14 +16,14 @@
                         
                        <ng-container    matColumnDef="AttachUrl" >
                            <th  mat-header-cell *matHeaderCellDef>الصورة</th>
-                           <td *matCellDef="let element" [hidden]="!(element.AttachType==2||element.AttachType==4)"  class="text-nowrap team-images-wrap py-3 px-3 centre" mat-cell  >
+                           <td *matCellDef="let element"   class="text-nowrap team-images-wrap py-3 px-3 centre" mat-cell  >
                               <img class="img-circle inline-block" src="{{element.AttachUrl}}" width="70" height="50">  
                            </td>
                         </ng-container> 
                         
                           <ng-container matColumnDef="action">
                              <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> {{'Action'|translate}} </th>
-                             <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
+                             <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;"  >
                               
                                 <button color="warn" mat-icon-button (click)="delete(element)">
                                    <mat-icon class="">delete</mat-icon>

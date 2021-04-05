@@ -103,16 +103,21 @@ class AdvertisementService extends __BaseService {
    */
   ApiAdvertisementNewSaveAdvertisementAttachPostResponse(params: AdvertisementService.ApiAdvertisementNewSaveAdvertisementAttachPostParams): __Observable<__StrictHttpResponse<IResponseDTO>> {
     let __params = this.newParams();
-    let __headers = new HttpHeaders();
+    let __headers = new HttpHeaders().append('Content-Disposition', 'multipart/form-data');
     let __body: any = null;
     let __formData = new FormData();
+    
+   // let headers =new HttpHeaders().append('Content-Disposition', 'multipart/form-data');
+   // const headers = new HttpHeaders().append('Content-Disposition', 'multipart/form-data');
+    // DON'T SET THE Content-Type to multipart/form-data, You'll get the Missing content-type boundary error
+   debugger
     __body = __formData;
     if (params.CreationDate != null) { __formData.append('CreationDate', params.CreationDate as string | Blob);}
     if (params.AttachType != null) { __formData.append('AttachType', JSON.stringify(params.AttachType));}
     if (params.AdsId != null) { __formData.append('AdsId', params.AdsId as string | Blob);}
     if (params.AdsAttachId != null) { __formData.append('AdsAttachId', params.AdsAttachId as string | Blob);}
     if (params.Notes != null) { __formData.append('Notes', params.Notes as string | Blob);}
-    if (params.File != null) __params = __params.set('File', params.File.toString());
+    if (params.File != null)  __formData.append('File', params.File);
     if (params.Available != null) { __formData.append('Available', JSON.stringify(params.Available));}
     if (params.AttachUrl != null) { __formData.append('AttachUrl', params.AttachUrl as string | Blob);}
     let req = new HttpRequest<any>(

@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog, MatDialogConfig } from '@angular/material';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdvertisementService } from 'src/app/api/services';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
@@ -36,13 +36,13 @@ export class AdvertisementdetailattachComponent implements OnInit { public data:
   ListCategory: any;
 	constructor(public translate : TranslateService,
 					private router : Router, private AdvertisementService:AdvertisementService,
-				 private dialog: MatDialog,private _snackBar: MatSnackBar) { }
+				 private dialog: MatDialog,private _snackBar: MatSnackBar,private activatedRoute:ActivatedRoute) { }
 
   
   ngOnInit() {
    
  // this.GetAllCategory();
-  // this.GetAllAdvertisementService();
+   this.GetAllAdvertisementService();
 }
 toggleVideo(event: any) {
   this.videoplayer.nativeElement.play();
@@ -52,18 +52,18 @@ window.open(src);
 }
  
   GetAllAdvertisementService(){
-    
+    this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
     this.ApiAdvertisementGetAdvertisementDetailsGetParams={id:this.advertisementid,CustomerId:null};
     this.AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetResponse(this.ApiAdvertisementGetAdvertisementDetailsGetParams).subscribe((data: any) => {
       debugger
-      this.List=data.body.Data.AdvertisementAttach;
+      this.List=data.body.Data.AdvertisementAttach.filter(x=>x.AttachType==0);
       console.log(this.List)
     })
   }
   onEdit(obj){
     debugger;
     const dialogRef = this.dialog.open(AdvertisementAddEditattachComponent, {
-      width: '250px',
+      width: '350px',
       data:obj,
       disableClose:true
     }).afterClosed().subscribe(result => {
@@ -76,7 +76,7 @@ window.open(src);
    // obj.action = action;
    
     const dialogRef = this.dialog.open(AdvertisementAddEditattachComponent, {
-      width: '250px',
+      width: '400px',
       data:obj,
       disableClose:true
     }).afterClosed().subscribe(result => {
@@ -101,9 +101,9 @@ window.open(src);
       //this.result = dialogResult;
       debugger;
       if(dialogResult==false){
-        this.AdvertisementService.ApiAdvertisementRemoveAdvertisementCategoryDeleteResponse(obj).subscribe( res=>{
+        this.AdvertisementService.ApiAdvertisementRemoveAdvertisementAttachDelete(obj).subscribe( res=>{
     
-          if(res.body.IsPassed==true)
+          if(res.IsPassed==true)
           {
             this._snackBar.open("تم الحذف بنجاح","حذف" ,{
               duration: 2220,

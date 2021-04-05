@@ -38,7 +38,7 @@ export class AdvertisementdetailcityComponent {
   ngOnInit() {
     this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
   this.GetAllCity();
-//  this.GetAllAdvertisementService();
+ this.GetAllAdvertisementService();
 }
 
 GetAllCity(){

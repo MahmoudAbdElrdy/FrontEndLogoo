@@ -38,7 +38,7 @@ export class AdvertisementdetailcategoryComponent implements OnInit { public dat
   ngOnInit() {
    
   this.GetAllCategory();
- // this.GetAllAdvertisementService();
+ this.GetAllAdvertisementService();
 }
 GetAllCategory(){
     

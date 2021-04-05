@@ -1,1 +1,21 @@
-<p>advertisement-add-editattach works!</p>
+<h1 mat-dialog-title>الملف</h1>
+<div mat-dialog-content>
+
+  <div>
+    
+    <div   class="form-group position-relative">
+        <div  *ngIf="AdsImage!==null" id="imagePreview">
+            <img  [src]="AdsImage" alt="صورة " style="height:100%;width:200%;">
+          </div>
+
+        <input  id="file-field" name="file-field" (change)="uploadImage($event)" type="file" >
+
+</div>
+  </div>
+  
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">{{'Close'|translate}}</button>
+  <button mat-button (click)="Save()" cdkFocusInitial>{{'Save'|translate}}</button>
+</div>
