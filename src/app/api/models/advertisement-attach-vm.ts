@@ -1,5 +1,5 @@
 /* tslint:disable */
-export interface AdvertisementAttachVM  {
+export class AdvertisementAttachVM  {
   AdsAttachId?: string;
   AdsId?: string;
   AttachType?: number;

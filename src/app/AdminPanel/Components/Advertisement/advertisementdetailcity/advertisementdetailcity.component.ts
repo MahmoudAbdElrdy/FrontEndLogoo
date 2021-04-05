@@ -1,17 +1,19 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog, MatDialogConfig } from '@angular/material';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdvertisementService, CityService } from 'src/app/api/services';
 import { CityVM } from 'src/app/api/models';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { AdvertisementAddEditCityComponent } from './advertisement-add-edit-city/advertisement-add-edit-city.component';
 import { AdvertisementCityVM } from 'src/app/api/models/advertisement-city-vm';
+import { detailsService } from 'src/app/Services/details.service';
 @Component({
   selector: 'app-advertisementdetailcity',
   templateUrl: './advertisementdetailcity.component.html',
-  styleUrls: ['./advertisementdetailcity.component.css']
+  styleUrls: ['./advertisementdetailcity.component.css'],
+  providers:[detailsService]
 })
 export class AdvertisementdetailcityComponent {
   public data: CityVM;
@@ -29,15 +31,16 @@ export class AdvertisementdetailcityComponent {
   dataSource = new MatTableDataSource<CityVM>();
   ListCity: any;
 	constructor(public translate : TranslateService,
-					private router : Router, private AdvertisementService:AdvertisementService,
-					private Service : CityService, private dialog: MatDialog,private _snackBar: MatSnackBar) { }
+					private router : Router, private AdvertisementService:AdvertisementService,private activatedRoute:ActivatedRoute,
+					private Service : CityService, private dialog: MatDialog,private _snackBar: MatSnackBar,private _dataShared:detailsService) { }
 
   
   ngOnInit() {
-   
+    this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
   this.GetAllCity();
-   this.GetAllAdvertisementService();
+//  this.GetAllAdvertisementService();
 }
+
 GetAllCity(){
     
   this.Service.ApiCityGetAllCityGet().subscribe((data: any) => {

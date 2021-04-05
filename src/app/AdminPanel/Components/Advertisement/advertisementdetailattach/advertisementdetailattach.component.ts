@@ -1,65 +1,68 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog, MatDialogConfig } from '@angular/material';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AdvertisementService, CategoryService } from 'src/app/api/services';
-import { CategoryVM } from 'src/app/api/models';
+import { Router } from '@angular/router';
+import { AdvertisementService } from 'src/app/api/services';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
-import { AdvertisementAddEditcategoryComponent } from './advertisement-add-editcategory/advertisement-add-editcategory.component';
-import { AdvertisementCategoryVM } from 'src/app/api/models/advertisement-category-vm';
-
+import { AdvertisementAddEditattachComponent } from './advertisement-add-editattach/advertisement-add-editattach.component';
+import { AdvertisementAttachVM } from 'src/app/api/models/advertisement-attach-vm';
 @Component({
-  selector: 'app-advertisementdetailcategory',
-  templateUrl: './advertisementdetailcategory.component.html',
-  styleUrls: ['./advertisementdetailcategory.component.css']
+  selector: 'app-advertisementdetailattach',
+  templateUrl: './advertisementdetailattach.component.html',
+  styleUrls: ['./advertisementdetailattach.component.css']
 })
-export class AdvertisementdetailcategoryComponent implements OnInit { public data: CategoryVM;
-  public dataModel: AdvertisementCategoryVM
+export class AdvertisementdetailattachComponent implements OnInit { public data: AdvertisementAttachVM;
+  public dataModel: AdvertisementAttachVM
   List 		      : any;
   id:any;
-  
+  @ViewChild('videoPlayer',{static: false}) videoplayer: ElementRef;
   @Input()advertisementid:any;
   @Input()Listadvertisementid:any;
 	popUpDeleteUserResponse : any;
+  ListType:any = [
+    {id: 1, text: 'نص'},
+    {id: 2, text: 'صورة'},
+    {id: 3, text: 'فيديو'},
+    {id: 4, text: 'الكل '},
+];
   ApiAdvertisementGetAdvertisementDetailsGetParams: AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetParams;
-	displayedColumns : string [] = ['CategoryId','CategoryName','action' ];
+	displayedColumns : string [] = ['AttachType','AttachUrl','action' ];
   @ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
   
 	@ViewChild(MatSort,{static: false}) sort           : MatSort;
   close: any;
-  dataSource = new MatTableDataSource<CategoryVM>();
+  dataSource = new MatTableDataSource<AdvertisementAttachVM>();
   ListCategory: any;
 	constructor(public translate : TranslateService,
-					private router : Router, private AdvertisementService:AdvertisementService,private activatedRoute:ActivatedRoute,
-					private Service : CategoryService, private dialog: MatDialog,private _snackBar: MatSnackBar) { }
+					private router : Router, private AdvertisementService:AdvertisementService,
+				 private dialog: MatDialog,private _snackBar: MatSnackBar) { }
 
   
   ngOnInit() {
    
-  this.GetAllCategory();
- // this.GetAllAdvertisementService();
+ // this.GetAllCategory();
+  // this.GetAllAdvertisementService();
 }
-GetAllCategory(){
-    
-  this.Service.ApiCategoryGetAllCategoryGetResponse().subscribe((data: any) => {
-   
-    this.ListCategory=data.Data;
-  })
+toggleVideo(event: any) {
+  this.videoplayer.nativeElement.play();
+}
+openNewTab(src) {
+window.open(src);
 }
  
   GetAllAdvertisementService(){
-    this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
+    
     this.ApiAdvertisementGetAdvertisementDetailsGetParams={id:this.advertisementid,CustomerId:null};
     this.AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetResponse(this.ApiAdvertisementGetAdvertisementDetailsGetParams).subscribe((data: any) => {
       debugger
-      this.List=data.body.Data.AdvertisementCategory;
+      this.List=data.body.Data.AdvertisementAttach;
       console.log(this.List)
     })
   }
   onEdit(obj){
     debugger;
-    const dialogRef = this.dialog.open(AdvertisementAddEditcategoryComponent, {
+    const dialogRef = this.dialog.open(AdvertisementAddEditattachComponent, {
       width: '250px',
       data:obj,
       disableClose:true
@@ -72,7 +75,7 @@ GetAllCategory(){
   openDialog(obj) {
    // obj.action = action;
    
-    const dialogRef = this.dialog.open(AdvertisementAddEditcategoryComponent, {
+    const dialogRef = this.dialog.open(AdvertisementAddEditattachComponent, {
       width: '250px',
       data:obj,
       disableClose:true
@@ -132,4 +135,5 @@ GetAllCategory(){
   }
  
 }
+
 

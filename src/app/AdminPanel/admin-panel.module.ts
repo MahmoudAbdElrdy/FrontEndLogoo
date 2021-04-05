@@ -65,6 +65,8 @@ import { AdvertisementdetailcityComponent } from './Components/Advertisement/adv
 import { AdvertisementAddEditCityComponent } from './Components/Advertisement/advertisementdetailcity/advertisement-add-edit-city/advertisement-add-edit-city.component';
 import { AdvertisementdetailcategoryComponent } from './Components/Advertisement/advertisementdetailcategory/advertisementdetailcategory.component';
 import { AdvertisementAddEditcategoryComponent } from './Components/Advertisement/advertisementdetailcategory/advertisement-add-editcategory/advertisement-add-editcategory.component';
+import { AdvertisementdetailattachComponent } from './Components/Advertisement/advertisementdetailattach/advertisementdetailattach.component';
+import { AdvertisementAddEditattachComponent } from './Components/Advertisement/advertisementdetailattach/advertisement-add-editattach/advertisement-add-editattach.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -79,7 +81,7 @@ export function createTranslateLoader(http: HttpClient) {
 		MainAdminPanelComponent,AdminUsersComponent,
 		SideBarComponent,
 		MenuListItemsComponent,
-		AdminHeaderComponent,CountryComponent,CityComponent,CategoryComponent,AdvertisementComponent,CustomDatePipe,MarketComponent, AdvertisementdetailComponent, AdvertisementdetailcityComponent, AdvertisementAddEditCityComponent, AdvertisementdetailcategoryComponent, AdvertisementAddEditcategoryComponent
+		AdminHeaderComponent,CountryComponent,CityComponent,CategoryComponent,AdvertisementComponent,CustomDatePipe,MarketComponent, AdvertisementdetailComponent, AdvertisementdetailcityComponent, AdvertisementAddEditCityComponent, AdvertisementdetailcategoryComponent, AdvertisementAddEditcategoryComponent, AdvertisementdetailattachComponent, AdvertisementAddEditattachComponent
 	],
 	imports: [FormsModule, ReactiveFormsModule,WidgetModule,NgxPaginationModule,MatVideoModule,
 		CommonModule,
