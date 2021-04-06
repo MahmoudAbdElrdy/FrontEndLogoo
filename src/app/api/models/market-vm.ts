@@ -14,4 +14,9 @@ export interface MarketVM  {
   MarketPhone?: string;
   Plateform?: boolean;
   Token?: string;
+  InstagramUrl:any;
+  SnapchatUrl:any;
+  WebSitUrl:any;
+  FacebookUrl:any;
+  TwitterUrl:any;
 }

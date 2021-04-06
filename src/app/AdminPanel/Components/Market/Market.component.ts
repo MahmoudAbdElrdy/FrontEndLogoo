@@ -18,9 +18,18 @@ export class MarketComponent  {
   List 		      : any;
 	popUpDeleteUserResponse : any;
 	displayedColumns : string [] = ['MarketId','MarketName','City','MarketLogo','MarketAddress','MarketEmail','MarketInfo','action' ];
-  @ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
+ // @ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
   
 	@ViewChild(MatSort,{static: false}) sort           : MatSort;
+  paginator: MatPaginator;
+  @ViewChild(MatPaginator,{static: false}) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.setDataSourceAttributes();
+    }
+    setDataSourceAttributes() {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   close: any;
   dataSource = new MatTableDataSource<MarketVM>();
 	constructor(public translate : TranslateService,
@@ -31,6 +40,7 @@ export class MarketComponent  {
   this.GetAll();
   debugger;
   this.dataSource = new MatTableDataSource(this.List);
+  
  // setTimeout(() => this.dataSource.paginator = this.paginator);
   }
 
@@ -39,12 +49,13 @@ export class MarketComponent  {
     this.Service.ApiMarketGetAllMarketContorlPanelGet().subscribe((data: any) => {
       
       this.List=data.Data;
+      this.dataSource = new MatTableDataSource(data.Data);
     })
   }
   onEdit(obj){
     debugger;
     const dialogRef = this.dialog.open(AddEditMarketComponent, {
-      width: '350px',
+      width: '400px',
       data:obj,
       disableClose:true
     }).afterClosed().subscribe(result => {
@@ -57,7 +68,7 @@ export class MarketComponent  {
    // obj.action = action;
    
     const dialogRef = this.dialog.open(AddEditMarketComponent, {
-      width: '350px',
+      width: '400px',
       data:obj,
       disableClose:true
     }).afterClosed().subscribe(result => {

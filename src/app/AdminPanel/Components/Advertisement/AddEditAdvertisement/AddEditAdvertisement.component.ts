@@ -31,8 +31,7 @@ show:any
    // this.action = this.dataModel.action;
      }
      ngOnInit() {
-      this.GetAllCity();
-      this.GetAllCategroy();
+    
       this.GetAllMarket();
     }
     DeleteUpdate(){

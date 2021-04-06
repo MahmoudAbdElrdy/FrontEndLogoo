@@ -19,7 +19,7 @@ export class AdvertisementComponent implements OnInit {
   List 		      : AdvertisementVM[];
   dataSource = new MatTableDataSource();
 	popUpDeleteUserResponse : any;//'CategoryName',
-	displayedColumns : string [] = ['AdsId','AdsType','MarketName','AdsText','StartDate','EndDate','AdvertismenOpen','CustomerOpen','AdvertismenView','CustomerView','action' ];
+	displayedColumns : string [] = ['AdsId','AdsName','AdsType','MarketName','AdsText','StartDate','EndDate','AdvertismenOpen','CustomerOpen','AdvertismenView','CustomerView','action' ];
 	//@ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
   @ViewChild(MatSort,{static: false}) sort           : MatSort;
   @ViewChild('videoPlayer',{static: false}) videoplayer: ElementRef;
@@ -55,6 +55,7 @@ export class AdvertisementComponent implements OnInit {
       debugger;
         this.List=data.Data;
         this.dataSource = new MatTableDataSource(data.Data);
+        console.log(this.List)
      // this.dataSource =  new MatTableDataSource<AdvertisementVM>(this.List);
      // this.dataSource.paginator = this.paginator;
     //  this.List= new MatTableDataSource(this.List);
@@ -75,7 +76,7 @@ GetUpdateAdvertsment(obj)
         this.MyUpdateModel=data.Data;
         this.MyUpdateModel.flag=0;
        this.MyUpdateModel.MarketId=obj.MarketId;
-       this.MyUpdateModel.CategoryId=obj.CategoryId;
+     //  this.MyUpdateModel.CategoryId=obj.CategoryId;
        // this.MyUpdateModel.MarketId='0';
         const dialogRef = this.dialog.open(AddEditAdvertisementComponent, {
          width: 'rem',
@@ -144,13 +145,15 @@ GetUpdateAdvertsment(obj)
    // this.dialog.open(AddAdvertisementComponent,dialogConfig);
   }
   openDialog(obj) {
+    debugger
    // obj.action = action;
    obj.flag='1';
     const dialogRef = this.dialog.open(AddEditAdvertisementComponent, {
       width: 'rem',
       data:obj
     }).afterClosed().subscribe(result => {
-      this.ngOnInit();
+      debugger
+      this.GetAll();
     });
   }
   
