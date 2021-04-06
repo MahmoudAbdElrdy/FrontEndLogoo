@@ -34,10 +34,13 @@
                            <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>الميل</th>
                            <td class="text-nowrap product-MarketEmail" mat-cell *matCellDef="let element"><span>{{element.MarketEmail}}</span></td>
                         </ng-container>
+                        
                           <ng-container matColumnDef="MarketInfo">
                            <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>الوصف</th>
                            <td class="text-nowrap product-MarketInfo" mat-cell *matCellDef="let element"><span>{{element.MarketInfo}}</span></td>
                         </ng-container>
+
+                        
                          
                           <ng-container matColumnDef="action">
                              <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> {{'Action'|translate}} </th>
