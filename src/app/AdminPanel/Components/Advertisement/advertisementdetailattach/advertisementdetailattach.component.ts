@@ -50,23 +50,12 @@ window.open(src);
     this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
     this.ApiAdvertisementGetAdvertisementDetailsGetParams={id:this.advertisementid,CustomerId:null};
     this.AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetResponse(this.ApiAdvertisementGetAdvertisementDetailsGetParams).subscribe((data: any) => {
-      debugger
+     
       this.List=data.body.Data.AdvertisementAttach.filter(x=>x.AttachType==0);
       console.log(this.List)
     })
   }
-  onEdit(obj){
-    debugger;
-    const dialogRef = this.dialog.open(AdvertisementAddEditattachComponent, {
-      width: '350px',
-      data:obj,
-      disableClose:true
-    }).afterClosed().subscribe(result => {
-     
-      this.GetAllAdvertisementService();
-    });
-   // this.dialog.open(AddCategoryComponent,dialogConfig);
-  }
+ 
   openDialog(obj) {
    // obj.action = action;
    
@@ -74,9 +63,16 @@ window.open(src);
       width: '400px',
       data:obj,
       disableClose:true
-    }).afterClosed().subscribe(result => {
+    }).afterClosed()
+    .subscribe(result => {
      
-      this. ngOnInit();
+      this.advertisementid= this.activatedRoute.snapshot.queryParams['advertisementid'];
+    this.ApiAdvertisementGetAdvertisementDetailsGetParams={id:this.advertisementid,CustomerId:null};
+    this.AdvertisementService.ApiAdvertisementGetAdvertisementDetailsGetResponse(this.ApiAdvertisementGetAdvertisementDetailsGetParams).subscribe((data: any) => {
+     
+      this.List=data.body.Data.AdvertisementAttach.filter(x=>x.AttachType==0);
+      console.log(this.List)
+    })
     });
   }
   

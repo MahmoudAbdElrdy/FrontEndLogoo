@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiConfiguration {
-  rootUrl: string = 'http://localhost:52023';
-//rootUrl: string = 'http://lookandgo-001-site1.dtempurl.com';
+  //rootUrl: string = 'http://localhost:52023';
+rootUrl: string = 'http://lookandgo-001-site1.dtempurl.com';
 }
 
 export interface ApiConfigurationInterface {
